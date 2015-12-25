@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ite
+# key: ite
+# --
+it "$1" do
+  expect($2).to $0
+end

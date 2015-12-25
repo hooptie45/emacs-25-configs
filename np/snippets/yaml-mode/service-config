@@ -1,0 +1,20 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: service-config
+# key: scf
+# expand-env: ((yas-indent-line nil) (yas-indent-first-line nil) )
+# --
+
+# ${3:HumanName} Service
+$1:
+  integration: &local_defaults
+    uri: 'alphabasv.bdns.bloomberg.com:28588'
+    version: ${2:Version}
+    xsd: 'schemas/${1:`(yank)`}/$2.xsd'
+  test: *local_defaults
+  development: &development
+    uri: 'devbasv.bdns.bloomberg.com:28588'
+  profile: *development
+  staging: &staging
+    <<: *local_defaults
+    uri: 'localhost:28588'
+  production: *staging

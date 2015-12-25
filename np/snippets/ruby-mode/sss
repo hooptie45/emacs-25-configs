@@ -1,0 +1,17 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: sss
+# key: sss
+# --
+require_relative "search_shared_examples"
+
+describe Search::${1:`(singularize-string (s-upper-camel-case (s-replace "controller_spec" "" (f-no-ext (f-filename (or (buffer-file-name) "test_foo_controller_spec.rb"))))))`}sController do
+
+  let(:search_resource_class) { Search::$1 }
+  let(:registration_class)    { Registration::$1 }
+
+  it_should_behave_like "any search resource controller with #query action"
+  it_should_behave_like "any search resource controller with #index action"
+  it_should_behave_like "any search resource controller with #update action"
+  it_should_behave_like "any search resource controller with #create action"
+
+end

@@ -1,0 +1,10 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: codedesc
+# key: codedesc
+# --
+describe "#$1" do
+  let(:attributes) { { :$1 => stub_code_description  }}
+
+  it { expect(subject[:$1]).to eql(expected_code_description_result) }
+end
+codedesc$0

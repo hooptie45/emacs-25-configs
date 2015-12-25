@@ -1,0 +1,6 @@
+(dolist (r `((?i (file . ,(concat user-emacs-directory "init.el")))
+             (?p (file . ,(concat user-emacs-directory "np/init/packages.el")))
+             (?m (file . ,(concat user-emacs-directory "elpa")))
+             (?x (file . ,(expand-file-name "~/xiki")))
+             (?r (file . ,(concat user-emacs-directory "np/settings/registers.el")))))
+  (set-register (car r) (cadr r)))

@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: it-will
+# key: itw
+# --
+it "will $1" do
+  expect($2).to eql $0
+end
